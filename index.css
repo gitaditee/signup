@@ -1,0 +1,29 @@
+body {
+    
+    
+    
+    background-color: #000;
+    color: white;
+}
+.container {
+    max-width: 900px;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.left-section {
+    background: #0b0220;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+.right-section {
+    padding: 50px;
+}
+.btn-primary {
+    background: linear-gradient(90deg, #7b3ff6, #a56ff6);
+    border: none;
+}
