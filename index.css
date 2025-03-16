@@ -1,29 +1,74 @@
-body {
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
-    
-    
-    background-color: #000;
-    color: white;
+    background-color: white;
+    width: 100%;
 }
-.container {
-    max-width: 900px;
-    background: white;
-    color: black;
-    border-radius: 10px;
-    overflow: hidden;
+.container-fluid {
+    background-color: white;
+    width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-left: 10px;
 }
-.left-section {
-    background: #0b0220;
-    color: white;
+.left-section{
+   
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px;
+    flex-direction: column;
+    padding: 50px;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 20px;
 }
 .right-section {
+    background: white;
+    width: 40%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     padding: 50px;
 }
-.btn-primary {
-    background: linear-gradient(90deg, #7b3ff6, #a56ff6);
+.left-section {
+   
+   background: linear-gradient(to right, #0b2e13, #1a4731);
+    color: white;
+    width: 50%;
+    text-align: center;
+    padding: 40px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3), inset 5px 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.btn-custom {
+    background: linear-gradient(90deg, #004d26, #00703c);
     border: none;
+    color: white;
+}
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #004d26;
+}
+.forgot {
+    text-decoration: none;
+    color: #00703c;
+}
+@media (max-width: 768px) {
+    .container-fluid {
+        flex-direction: column;
+        height: auto;
+    }
+    .left-section, .right-section {
+        width: 100%;
+        height: auto;
+        padding: 30px;
+    }
 }
