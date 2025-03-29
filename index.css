@@ -1,63 +1,20 @@
 body {
-    background-color: #f8f9fa;
+  background-color: #f8f9fa;
 }
-.container-wrapper {
-    display: flex;
-    max-width: 1200px;
-    margin: auto;
+.container {
+  max-width: 600px;
+  margin-top: 50px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
-.sidebar {
-    width: 250px;
-    background: linear-gradient(to right, #d6f5a8, #68c478);
-    padding: 20px;
-    border-radius: 10px;
-    height: 100vh;
-}
-.sidebar h5 {
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-.sidebar ul li {
-    padding: 10px;
-    border-left: 3px solid transparent;
-    cursor: pointer;
-    margin-bottom: 10px;
-}
-.sidebar ul li.active, .sidebar ul li:hover {
-    background: #d6f5a8;
-    border-left: 3px solid #043927;
-}
-.sidebar ul li span {
-    display: block;
-    font-size: 12px;
-    color: #6c757d;
-    margin-top: 5px;
-}
-.content {
-    flex: 1;
-    background:linear-gradient(to left, #d6f5a8, #68c478);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-left: 20px;
-}
-.toggle-switch {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    background: #f1f3f5;
-    border-radius: 5px;
-}
-.toggle-switch .form-check-input {
-    width: 40px;
-    height: 20px;
-}
-.section-title {
-    font-weight: bold;
-    margin-top: 20px;
+.header {
+  background: #f9a825;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
 }
