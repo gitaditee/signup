@@ -7,86 +7,54 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="quote.component.css">
     <title>Document</title>
-</head>
-<body>
-    <div class="container-wrapper mt-4">
-        <div class="sidebar">
-            <h5>Steps</h5>
-            <ul>
-                <li class="active">1. Get Quote <span>Enter package details to receive a quote.</span></li>
-                <li>2.Content Details <span>Provide package weight, dimensions, and item details.</span></li>
-                <li>3.Customize <span>Enter supplier information for shipping.</span></li>
-                <li>4. <span>Track and manage your shipment.</span></li>
-                <li>5. Destination <span>Specify the delivery destination.</span></li>
-                <li>6. Billing Details <span>Review and confirm payment details.</span></li>
-            </ul>
-        </div>
-        <div class="content">
-            <h4 class="mb-3">Get Quote</h4>
-            <p>Add your package information to get an instant quote.</p>
+</head><body>
+  <div class="container">
+      <div class="header">Content Details</div>
+      <form>
+          <div class="mb-3">
+              <label for="belongingValue" class="form-label">Value of Your Belongings</label>
+              <input type="number" class="form-control" id="belongingValue" min="30000" max="5000000" required>
+              <small class="text-muted">Min: ₹30,000 | Max: ₹50,00,000</small>
+          </div>
+          
+          <div class="mb-3">
+              <label class="form-label">Security Measures Available</label>
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="intercom">
+                  <label class="form-check-label" for="intercom">Intercom / Burglary Alarm</label>
+              </div>
+             
+          </div>
+          
+         
+          
+        
+      </form>
+  </div>
+  <div class="container">
+  <div class="form-check">
 
-            <div class="toggle-switch mb-3">
-                <span>Would you like to estimate taxes and duties in the quote?</span>
-                <input class="form-check-input" type="checkbox" checked>
-            </div>
-
-            <div class="toggle-switch mb-3">
-                <span>Units of measurement for packages</span>
-                <input class="form-check-input" type="checkbox" checked>
-            </div>
-
-            <h5 class="section-title">Packages</h5>
-            <div class="row g-2 mb-3">
-                <div class="col-md-2">
-                    <input type="number" class="form-control" placeholder="Weight (kg)">
-                </div>
-                <div class="col-md-2">
-                    <input type="number" class="form-control" placeholder="Length (cm)">
-                </div>
-                <div class="col-md-2">
-                    <input type="number" class="form-control" placeholder="Width (cm)">
-                </div>
-                <div class="col-md-2">
-                    <input type="number" class="form-control" placeholder="Height (cm)">
-                </div>
-                <div class="col-md-2">
-                    <input type="number" class="form-control" placeholder="Quantity">
-                </div>
-                <div class="col-md-2 text-end">
-                    <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                </div>
-            </div>
-            <button class="btn btn-outline-primary"><i class="fas fa-plus"></i> Add More Packages</button>
-
-            <h5 class="section-title mt-4">Products</h5>
-            <div class="row g-2">
-                <div class="col-md-3">
-                    <input type="text" class="form-control" placeholder="Description">
-                </div>
-                <div class="col-md-2">
-                    <input type="text" class="form-control" placeholder="HS Code">
-                </div>
-                <div class="col-md-2">
-                    <select class="form-select">
-                        <option selected>Origin Country</option>
-                        <option>China</option>
-                        <option>USA</option>
-                        <option>India</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <input type="number" class="form-control" placeholder="Weight (kg)">
-                </div>
-                <div class="col-md-2">
-                    <input type="number" class="form-control" placeholder="Quantity">
-                </div>
-                <div class="col-md-1 text-end">
-                    <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                </div>
-            </div>
-            <button class="btn btn-outline-primary mt-3"><i class="fas fa-plus"></i> Add More Products</button>
+    <div class="header">Security Majors Available</div>
+          
+    <div class="mb-3">
+      <label class="form-label">Security Measures Available</label>
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="intercom">
+          <label class="form-check-label" for="intercom">Intercom / Burglary Alarm</label>
+      </div>
+     <div class="container">
+      <div class="mb-3">
+        <label class="form-label">Are you a salaried individual?</label>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="salariedIndividual">
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     </div>
+  </div>
+  
+</div>
+
+</div>
+<button type="submit" class="btn btn-danger align-item-center">Proceed</button>
 </body>
 </html>
