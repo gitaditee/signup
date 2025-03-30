@@ -1,61 +1,20 @@
 body {
   background-color: #f8f9fa;
 }
-
-/* Progress Bar */
-.progress-bar-container {
+.container-box {
+  background: #f4a261;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+.form-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.toggle-switch {
   display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 2px solid #f39c12;
-}
-
-.progress-bar-step {
-  flex: 1;
-  text-align: center;
-  padding: 10px;
-  font-weight: bold;
-  color: #666;
-  position: relative;
-}
-
-.progress-bar-step.active {
-  color: #f39c12;
-  font-weight: bold;
-}
-
-/* Tenure Selection */
-.tenure-card {
-  text-align: center;
-  border: 2px solid #ddd;
-  padding: 15px;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.tenure-card:hover {
-  background-color: #f39c12;
-  color: white;
-}
-
-/* Additional Cover */
-.cover-card {
-  text-align: center;
-  border: 2px solid #ddd;
-  padding: 15px;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.cover-card i {
-  font-size: 24px;
-  margin-bottom: 8px;
-}
-
-.cover-card:hover {
-  background-color: #f39c12;
-  color: white;
+  align-items: center;
+  gap: 10px;
 }
