@@ -9,46 +9,87 @@
     <title>Document</title>
 </head>
 <body>
-  <div class="container">
-      <div class="header"> 
-          <span>Content Details</span>
-      </div>
-      
-      <div class="row mt-3">
-          <div class="col-md-6">
-              <label class="form-label">Structure Value</label>
-              <input type="text" class="form-control" value="N/A" disabled>
-          </div>
-          <div class="col-md-6">
-              <label class="form-label">Content/Belonging Value</label>
-              <div class="input-group">
-                  <input type="text" class="form-control" value="₹ 47,68,798" disabled>
-                  <span class="input-group-text icon">✏️</span>
-              </div>
-          </div>
-      </div>
+    <div class="card p-4 mt-3">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label">🏠 Structure Value</label>
+                <input type="text" class="form-control" value="₹ N/A" disabled>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">📦 Content/Belonging Value</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" value="₹ 47,68,798" disabled>
+                    <span class="input-group-text"><i class="fas fa-pen"></i></span>
+                </div>
+            </div>
+        </div>
 
-      <div class="plan-box mt-4">
-          <h5 class="text-warning">COMPREHENSIVE</h5>
-          <p><strong>Sum Insured:</strong> ₹ 47,68,798</p>
-          
-          <p class="fw-bold">COVERS FOR YOUR CONTENT/BELONGINGS:</p>
-          <div class="row">
-              <div class="col-md-4">🔥 Fire</div>
-              <div class="col-md-4">🌊 Natural Calamities</div>
-              
-              <div class="col-md-4">🏡 Alternate Accomodation</div>
-              <div class="col-md-4">🏚️ Accidental Damage</div>
-              <div class="col-md-4">🔌 Electrical Breakdown</div>
-              <div class="col-md-4">🛅 Burglary and Theft</div>
-              
-          </div>
-          
-          <div class="mt-3 d-flex justify-content-between align-items-center">
-              <p class="fw-bold text-danger">Annual Premium: ₹ 24,202 (+Tax)</p>
-              <button class="btn btn-proceed">PROCEED</button>
-          </div>
-      </div>
-  </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label">Sum Insured</label>
+                <input type="text" class="form-control" value="₹ 47,68,798" disabled>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Annual Premium</label>
+                <input type="text" class="form-control" value="₹ 24,202" disabled>
+            </div>
+        </div>
+
+        <!-- Tenure Selection -->
+        <h5 class="mt-3">Choose Tenure</h5>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="tenure-card">1 Year <br> ₹ 24,202</div>
+            </div>
+            <div class="col-md-3">
+                <div class="tenure-card">2 Years <br> ₹ 46,400</div>
+            </div>
+            <div class="col-md-3">
+                <div class="tenure-card">3 Years <br> ₹ 66,596</div>
+            </div>
+            <div class="col-md-3">
+                <div class="tenure-card">5 Years <br> ₹ 1,00,979</div>
+            </div>
+        </div>
+
+        <!-- Additional Cover -->
+        <h5 class="mt-3">Additional Cover</h5>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="cover-card">
+                    <i class="fas fa-laptop"></i>
+                    <p>Portable Electronics</p>
+                    <button class="btn btn-sm btn-outline-primary">+</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="cover-card">
+                    <i class="fas fa-gem"></i>
+                    <p>Jewellery & Valuables</p>
+                    <button class="btn btn-sm btn-outline-primary">+</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="cover-card">
+                    <i class="fas fa-bicycle"></i>
+                    <p>Bicycle</p>
+                    <button class="btn btn-sm btn-outline-primary">+</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="cover-card">
+                    <i class="fas fa-user-shield"></i>
+                    <p>Terrorism Cover</p>
+                    <button class="btn btn-sm btn-outline-primary">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proceed Button -->
+        <div class="text-end mt-3">
+            <button class="btn btn-danger">PROCEED →</button>
+        </div>
+    </div>
+
 </body>
 </html>
