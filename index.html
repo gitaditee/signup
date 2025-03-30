@@ -9,87 +9,80 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="card p-4 mt-3">
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label class="form-label">🏠 Structure Value</label>
-                <input type="text" class="form-control" value="₹ N/A" disabled>
-            </div>
-            <div class="col-md-6">
-                <label class="form-label">📦 Content/Belonging Value</label>
-                <div class="input-group">
-                    <input type="text" class="form-control" value="₹ 47,68,798" disabled>
-                    <span class="input-group-text"><i class="fas fa-pen"></i></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label class="form-label">Sum Insured</label>
-                <input type="text" class="form-control" value="₹ 47,68,798" disabled>
-            </div>
-            <div class="col-md-6">
-                <label class="form-label">Annual Premium</label>
-                <input type="text" class="form-control" value="₹ 24,202" disabled>
-            </div>
-        </div>
-
-        <!-- Tenure Selection -->
-        <h5 class="mt-3">Choose Tenure</h5>
+    <div class="container mt-5">
         <div class="row">
-            <div class="col-md-3">
-                <div class="tenure-card">1 Year <br> ₹ 24,202</div>
-            </div>
-            <div class="col-md-3">
-                <div class="tenure-card">2 Years <br> ₹ 46,400</div>
-            </div>
-            <div class="col-md-3">
-                <div class="tenure-card">3 Years <br> ₹ 66,596</div>
-            </div>
-            <div class="col-md-3">
-                <div class="tenure-card">5 Years <br> ₹ 1,00,979</div>
-            </div>
-        </div>
-
-        <!-- Additional Cover -->
-        <h5 class="mt-3">Additional Cover</h5>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="cover-card">
-                    <i class="fas fa-laptop"></i>
-                    <p>Portable Electronics</p>
-                    <button class="btn btn-sm btn-outline-primary">+</button>
+            <div class="col-md-4">
+                <div class="container-box">
+                    <h5>Cover details</h5>
+                    <p><strong>Content Value</strong></p>
+                    <h4>₹ 47,68,798</h4>
+                    <hr>
+                    <h5>Premium details</h5>
+                    <p>Base Premium: <strong>₹ 33,382</strong></p>
+                    <p>Discount: <strong>- ₹ 9,180</strong></p>
+                    <p>GST (18%): <strong>₹ 4,356</strong></p>
+                    <h4>Total Premium: ₹ 28,558</h4>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="cover-card">
-                    <i class="fas fa-gem"></i>
-                    <p>Jewellery & Valuables</p>
-                    <button class="btn btn-sm btn-outline-primary">+</button>
+            <div class="col-md-8">
+                <div class="form-container">
+                    <h5>Fill your Details</h5>
+                    <div class="toggle-switch">
+                        <label>Do you have a PAN Card?</label>
+                        <input type="checkbox" class="form-check-input">
+                    </div>
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label>Salutation</label>
+                                <select class="form-select">
+                                    <option>Mr</option>
+                                    <option>Ms</option>
+                                    <option>Mrs</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label>Full Name</label>
+                                <input type="text" class="form-control" placeholder="As mentioned in PAN Card">
+                            </div>
+                            <div class="col">
+                                <label>Date of Birth</label>
+                                <input type="date" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label>Email</label>
+                                <input type="email" class="form-control" placeholder="example@gmail.com">
+                            </div>
+                            <div class="col">
+                                <label>Mobile Number</label>
+                                <input type="tel" class="form-control" placeholder="Enter mobile number">
+                            </div>
+                        </div>
+                        <div class="toggle-switch">
+                            <label>Do you wish to add co-owner?</label>
+                            <input type="checkbox" class="form-check-input">
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <label>Pincode</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label>State</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label>City</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-danger mt-4 w-100">NEXT</button>
+                    </form>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="cover-card">
-                    <i class="fas fa-bicycle"></i>
-                    <p>Bicycle</p>
-                    <button class="btn btn-sm btn-outline-primary">+</button>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="cover-card">
-                    <i class="fas fa-user-shield"></i>
-                    <p>Terrorism Cover</p>
-                    <button class="btn btn-sm btn-outline-primary">+</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Proceed Button -->
-        <div class="text-end mt-3">
-            <button class="btn btn-danger">PROCEED →</button>
         </div>
     </div>
-
 </body>
 </html>
