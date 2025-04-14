@@ -1,88 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="quote.component.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quote Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f1f5ff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .card.quote-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card.quote-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+      background-color: #eef3ff;
+    }
+
+    .nav-pills .nav-link.active {
+      background-color: #0d6efd;
+    }
+
+    .rounded-4 {
+      border-radius: 1rem !important;
+    }
+
+    .quote-badge {
+      font-size: 0.75rem;
+      padding: 0.35em 0.6em;
+      border-radius: 0.5rem;
+    }
+  </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="container-box">
-                    <h5>Cover details</h5>
-                    <p><strong>Content Value</strong></p>
-                    <h4>₹ 47,68,798</h4>
-                    <hr>
-                    <h5>Premium details</h5>
-                    <p>Base Premium: <strong>₹ 33,382</strong></p>
-                    <p>Discount: <strong>- ₹ 9,180</strong></p>
-                    <p>GST (18%): <strong>₹ 4,356</strong></p>
-                    <h4>Total Premium: ₹ 28,558</h4>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="form-container">
-                    <h5>Fill your Details</h5>
-                    <div class="toggle-switch">
-                        <label>Do you have a PAN Card?</label>
-                        <input type="checkbox" class="form-check-input">
-                    </div>
-                    <form>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label>Salutation</label>
-                                <select class="form-select">
-                                    <option>Mr</option>
-                                    <option>Ms</option>
-                                    <option>Mrs</option>
-                                </select>
-                            </div>
-                            <div class="col">
-                                <label>Full Name</label>
-                                <input type="text" class="form-control" placeholder="As mentioned in PAN Card">
-                            </div>
-                            <div class="col">
-                                <label>Date of Birth</label>
-                                <input type="date" class="form-control">
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label>Email</label>
-                                <input type="email" class="form-control" placeholder="example@gmail.com">
-                            </div>
-                            <div class="col">
-                                <label>Mobile Number</label>
-                                <input type="tel" class="form-control" placeholder="Enter mobile number">
-                            </div>
-                        </div>
-                        <div class="toggle-switch">
-                            <label>Do you wish to add co-owner?</label>
-                            <input type="checkbox" class="form-check-input">
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col">
-                                <label>Pincode</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="col">
-                                <label>State</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="col">
-                                <label>City</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-danger mt-4 w-100">NEXT</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+
+<div class="container mt-5">
+  <div class="card shadow p-4 rounded-4" style="background-image: linear-gradient(to right, #d6f5a8, #68c478);">
+    <h4 class="fw-bold mb-1">Good Morning Ganesh</h4>
+    <p class="text-muted">We personally select every item that you can ship on the weariness.</p>
+
+    <!-- Tabs -->
+    <ul class="nav nav-pills mb-4" id="pills-tab">
+      <li class="nav-item"><a class="nav-link active" href="#">Active Orders</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Quotes</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Upcoming</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">On hold</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Cancelled</a></li>
+    </ul>
+
+    <!-- Search and Buttons -->
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+      <input type="text" class="form-control w-50" placeholder="Search within 17 quotations...">
+      <div>
+        <button class="btn btn-outline-secondary me-2">Filter</button>
+        <button class="btn btn-primary">+ Request New Quote</button>
+      </div>
     </div>
+
+    <!-- Quote Cards -->
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card quote-card rounded-4 shadow-sm border-0 p-3">
+          <p class="text-muted small mb-1">23/07/2023, 2:58 PM</p>
+          <h6 class="fw-semibold mb-1">Bulk Quote ID: <span class="text-primary">#241041080</span>
+            <span class="badge bg-warning text-dark quote-badge">Pending</span>
+          </h6>
+          <ul class="list-unstyled mt-3 mb-2 small">
+            <li>No of Quotes: 4</li>
+            <li>Total Weight: 400 KG</li>
+            <li>Total Volume: 5 M³</li>
+          </ul>
+          <div class="text-muted small">Estimated Quotation</div>
+          <h5 class="fw-bold text-end text-primary">$4,224</h5>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card quote-card rounded-4 shadow-sm border-0 p-3">
+          <p class="text-muted small mb-1">15/08/2023, 3:15 PM</p>
+          <h6 class="fw-semibold mb-1">Bulk Quote ID: <span class="text-primary">#145289547</span>
+            <span class="badge bg-success quote-badge">Active</span>
+          </h6>
+          <ul class="list-unstyled mt-3 mb-2 small">
+            <li>No of Quotes: 10</li>
+            <li>Total Weight: 800 KG</li>
+            <li>Total Volume: 6 M³</li>
+          </ul>
+          <div class="text-muted small">Estimated Quotation</div>
+          <h5 class="fw-bold text-end text-primary">$5,478</h5>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card quote-card rounded-4 shadow-sm border-0 p-3">
+          <p class="text-muted small mb-1">20/09/2023, 1:54 PM</p>
+          <h6 class="fw-semibold mb-1">Bulk Quote ID: <span class="text-primary">#563248512</span>
+            <span class="badge bg-secondary quote-badge">New</span>
+          </h6>
+          <ul class="list-unstyled mt-3 mb-2 small">
+            <li>No of Quotes: 6</li>
+            <li>Total Weight: 300 KG</li>
+            <li>Total Volume: 3 M³</li>
+          </ul>
+          <div class="text-muted small">Estimated Quotation</div>
+          <h5 class="fw-bold text-end text-primary">$6,859</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rejected Section -->
+    <div class="mt-5">
+      <div class="card border-0 rounded-4 shadow-sm p-4">
+        <h6 class="fw-semibold text-danger mb-2">You rejected this quote & asked for edit.</h6>
+        <p class="mb-2 text-muted small">Date: 23 July, 2023 | ID: #241041080</p>
+        <div class="d-flex align-items-center mt-2">
+          <div class="bg-primary text-white rounded-circle d-flex justify-content-center align-items-center" style="width: 50px; height: 50px;">
+            H
+          </div>
+          <div class="ms-3">
+            <div class="fw-semibold">Himanshu Shrivastav</div>
+            <div class="text-muted small">himanshu129y.com</div>
+          </div>
+          <div class="ms-auto text-end">
+            <div>Quotation No: <b>#131341</b></div>
+            <div>From: <b>DB Schenker</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
