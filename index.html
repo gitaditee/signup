@@ -1,144 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quote Dashboard</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
   <style>
     body {
-      background-color: #f1f5ff;
+      background-color: #fbfdf9;
       font-family: 'Segoe UI', sans-serif;
     }
 
-    .card.quote-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-      cursor: pointer;
+    .sidebar {
+      background-image: linear-gradient(to right, #d6f5a8, #68c478);
+      min-height: 100vh;
+      padding-top: 2rem;
+      position: fixed;
+      width: 250px;
     }
 
-    .card.quote-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
-      background-color: #eef3ff;
+    .sidebar .nav-link {
+      color: #000;
+      font-weight: 500;
     }
 
-    .nav-pills .nav-link.active {
-      background-color: #0d6efd;
+    .sidebar .nav-link.active {
+      background-image: linear-gradient(to right, #d6f5a8, #68c478);
     }
 
-    .rounded-4 {
-      border-radius: 1rem !important;
+    .main-content {
+      margin-left: 250px;
+      padding: 2rem;
     }
 
-    .quote-badge {
-      font-size: 0.75rem;
-      padding: 0.35em 0.6em;
-      border-radius: 0.5rem;
+    .card {
+      border-radius: 20px;
+    }
+
+    .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .dropdown-toggle::after {
+      display: none;
+    }
+
+    .btn-green {
+      background-color: #2f855a;
+      color:white
+    }
+
+    .btn-green:hover {
+      color: #043927;
+    }
+
+    .highlight-box {
+      background-image: linear-gradient(to right, #d6f5a8, #68c478);
+      border-radius: 16px;
+      padding: 1rem;
+      color: white;
+      text-align: center;
+    }
+
+    .info-box {
+      background-color: #f8f8f8;
+      border-radius: 10px;
+      padding: 10px 15px;
+      margin-bottom: 15px;
+    }
+
+    .info-label {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .info-value {
+      font-weight: 600;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
 
-<div class="container mt-5">
-  <div class="card shadow p-4 rounded-4" style="background-image: linear-gradient(to right, #d6f5a8, #68c478);">
-    <h4 class="fw-bold mb-1">Good Morning Ganesh</h4>
-    <p class="text-muted">We personally select every item that you can ship on the weariness.</p>
-
-    <!-- Tabs -->
-    <ul class="nav nav-pills mb-4" id="pills-tab">
-      <li class="nav-item"><a class="nav-link active" href="#">Active Orders</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Quotes</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Upcoming</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">On hold</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Cancelled</a></li>
-    </ul>
-
-    <!-- Search and Buttons -->
-    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
-      <input type="text" class="form-control w-50" placeholder="Search within 17 quotations...">
-      <div>
-        <button class="btn btn-outline-secondary me-2">Filter</button>
-        <button class="btn btn-primary">+ Request New Quote</button>
-      </div>
+<div class="d-flex">
+  <!-- Sidebar -->
+  <div class="sidebar d-flex flex-column justify-content-between px-3">
+    <div>
+      <h4 class="mb-4">🅼onir</h4>
+      <ul class="nav flex-column gap-2">
+        <li class="nav-item"><a class="nav-link active" href="#"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-shop me-2"></i>Market</a></li>
+        <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-envelope me-2"></i>Messages <span class="badge text-bg-danger ms-1">1</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-wallet2 me-2"></i>My Wallets</a></li>
+        <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-activity me-2"></i>Activity</a></li>
+      </ul>
     </div>
 
-    <!-- Quote Cards -->
-    <div class="row g-4">
-      <!-- Card 1 -->
-      <div class="col-md-4">
-        <div class="card quote-card rounded-4 shadow-sm border-0 p-3">
-          <p class="text-muted small mb-1">23/07/2023, 2:58 PM</p>
-          <h6 class="fw-semibold mb-1">Bulk Quote ID: <span class="text-primary">#241041080</span>
-            <span class="badge bg-warning text-dark quote-badge">Pending</span>
-          </h6>
-          <ul class="list-unstyled mt-3 mb-2 small">
-            <li>No of Quotes: 4</li>
-            <li>Total Weight: 400 KG</li>
-            <li>Total Volume: 5 M³</li>
-          </ul>
-          <div class="text-muted small">Estimated Quotation</div>
-          <h5 class="fw-bold text-end text-primary">$4,224</h5>
-        </div>
+    <div class="mb-4">
+      <a class="nav-link" href="#"><i class="bi bi-question-circle me-2"></i>Get Help</a>
+      <a class="nav-link" href="#"><i class="bi bi-gear me-2"></i>Settings</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content w-100">
+    <!-- Top bar -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div class="input-group w-50">
+        <input type="text" class="form-control" placeholder="Search..." />
+        <span class="input-group-text"><i class="bi bi-search"></i></span>
       </div>
 
-      <!-- Card 2 -->
-      <div class="col-md-4">
-        <div class="card quote-card rounded-4 shadow-sm border-0 p-3">
-          <p class="text-muted small mb-1">15/08/2023, 3:15 PM</p>
-          <h6 class="fw-semibold mb-1">Bulk Quote ID: <span class="text-primary">#145289547</span>
-            <span class="badge bg-success quote-badge">Active</span>
-          </h6>
-          <ul class="list-unstyled mt-3 mb-2 small">
-            <li>No of Quotes: 10</li>
-            <li>Total Weight: 800 KG</li>
-            <li>Total Volume: 6 M³</li>
-          </ul>
-          <div class="text-muted small">Estimated Quotation</div>
-          <h5 class="fw-bold text-end text-primary">$5,478</h5>
-        </div>
-      </div>
+      <div class="d-flex align-items-center gap-3">
+        <span class="fw-semibold">3.06 ETH</span>
+        <i class="bi bi-bell fs-5"></i>
 
-      <!-- Card 3 -->
-      <div class="col-md-4">
-        <div class="card quote-card rounded-4 shadow-sm border-0 p-3">
-          <p class="text-muted small mb-1">20/09/2023, 1:54 PM</p>
-          <h6 class="fw-semibold mb-1">Bulk Quote ID: <span class="text-primary">#563248512</span>
-            <span class="badge bg-secondary quote-badge">New</span>
-          </h6>
-          <ul class="list-unstyled mt-3 mb-2 small">
-            <li>No of Quotes: 6</li>
-            <li>Total Weight: 300 KG</li>
-            <li>Total Volume: 3 M³</li>
+        <div class="dropdown">
+          <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+            <img src="https://i.pravatar.cc/100" class="avatar" />
+            <span class="ms-2 fw-medium">Monir</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end mt-2 shadow">
+            <li><a class="dropdown-item" href="#">Your Profile</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
           </ul>
-          <div class="text-muted small">Estimated Quotation</div>
-          <h5 class="fw-bold text-end text-primary">$6,859</h5>
         </div>
       </div>
     </div>
 
-    <!-- Rejected Section -->
-    <div class="mt-5">
-      <div class="card border-0 rounded-4 shadow-sm p-4">
-        <h6 class="fw-semibold text-danger mb-2">You rejected this quote & asked for edit.</h6>
-        <p class="mb-2 text-muted small">Date: 23 July, 2023 | ID: #241041080</p>
-        <div class="d-flex align-items-center mt-2">
-          <div class="bg-primary text-white rounded-circle d-flex justify-content-center align-items-center" style="width: 50px; height: 50px;">
-            H
+    <!-- Profile Card -->
+    <div class="row">
+      <div class="col-md-4">
+        <div class="highlight-box mb-4">
+          <div class="fw-bold fs-5">64%</div>
+          <div class="small">Complete profile</div>
+          <button class="btn btn-light btn-sm mt-2">Verify identity</button>
+        </div>
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action d-flex align-items-center py-3 fs-5 fw-semibold">
+            <i class="bi bi-person-fill me-3 fs-4"></i> Account Information
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex align-items-center py-3 fs-5 fw-semibold">
+            <i class="bi bi-eye-fill me-3 fs-4"></i> Password
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex align-items-center py-3 fs-5 fw-semibold">
+            <i class="bi bi-credit-card-2-front me-3 fs-4"></i> Payment Methods
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex align-items-center py-3 fs-5 fw-semibold">
+            <i class="bi bi-pencil me-3 fs-4"></i> Invite Your Friends
+          </a>
+        </div>
+        
+      </div>
+
+      <div class="col-md-8">
+        <div class="card p-4 shadow-sm">
+          <h5 class="fw-bold mb-4">Personal Informations</h5>
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <img src="https://i.pravatar.cc/100" class="avatar" />
+            <div>
+              <div class="fw-bold fs-5">Monir UX Designer</div>
+             
+              <button class="btn btn-outline-danger btn-sm mt-1 ms-2">LogOut</button>
+            </div>
           </div>
-          <div class="ms-3">
-            <div class="fw-semibold">Himanshu Shrivastav</div>
-            <div class="text-muted small">himanshu129y.com</div>
+
+          <div class="info-box">
+            <div class="info-label">Full Name</div>
+            <div class="info-value">Monir UX Designer</div>
           </div>
-          <div class="ms-auto text-end">
-            <div>Quotation No: <b>#131341</b></div>
-            <div>From: <b>DB Schenker</b></div>
+
+          <div class="info-box">
+            <div class="info-label">Email Address</div>
+            <div class="info-value">moniruzzaman0917gmail.com</div>
           </div>
+
+          <div class="info-box">
+            <div class="info-label">Phone Number</div>
+            <div class="info-value">+088 01876265388</div>
+          </div>
+
+          <div class="info-box">
+            <div class="info-label">Address</div>
+            <div class="info-value">Street 123, Apt 45</div>
+          </div>
+
+          <div class="info-box">
+            <div class="info-label">Location</div>
+            <div class="info-value">Dhaka, Bangladesh</div>
+          </div>
+
+          <button class="btn btn-green w-100">Update</button>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
